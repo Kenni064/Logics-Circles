@@ -1,9 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DirectionalNode : MonoBehaviour
 {
+    //public Sprite <variableName>;//
+ 
     public Sprite none;
     public Sprite left;
     public Sprite right;
@@ -14,7 +16,11 @@ public class DirectionalNode : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        sr.sprite = left;
         SwitchSprite();
+        
+        
+       
     }
 
     // Update is called once per frame
@@ -22,20 +28,21 @@ public class DirectionalNode : MonoBehaviour
     {
         
     }
-
     void SwitchSprite()
     {
+        
+
         if(current == "left")
         {
-            sr.sprite = left;
+            Debug.Log("Choose Left");
         }
         else if(current == "right")
         {
-            sr.sprite = right;
+            Debug.Log("Choose Right");
         }
-        else
+        else 
         {
-            sr.sprite = none;
+            Debug.Log("Choose None");
         }
     }
 }
